@@ -1,0 +1,12 @@
+:root {
+  --light: #FFFFFF;
+  --coffee: #3B2F2F;
+  --lilac: #DCD0FF;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Tahoma, sans-serif;
+}
