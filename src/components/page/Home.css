@@ -1,0 +1,28 @@
+.url-container {
+    text-align: center;
+    margin-top: 6rem;
+}
+
+.url-input {
+    padding: 5px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 5px;
+    height: 40px;
+    width: 18rem;
+}
+
+.url-btn {
+    height: 40px;
+    margin-left: 10px;
+    width: 40px;
+    border-radius: 20px;
+    border: none;
+    background: var(--purple);
+    color: var(--light);
+    cursor: pointer;
+}
+
+.url-btn:hover {
+    color: inherit;
+}
