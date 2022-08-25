@@ -5,7 +5,7 @@ const Login = () => {
     <div className="login-container">
       <form className="login-form">
         <h1 className="login header-text">Login</h1>
-        <div className="login-input">
+        <div className="login-control">
           <label htmlFor="email" />
           <input
             type="email"
@@ -15,7 +15,7 @@ const Login = () => {
             required
           />
         </div>
-        <div className="login-input">
+        <div className="login-control">
           <label htmlFor="password" />
           <input
             type="password"
@@ -31,7 +31,7 @@ const Login = () => {
       </form>
       <div className="login-span">
         <span>
-          No Account? <Link to="/">click here</Link>
+          No Account? <Link to="/signup">click here</Link>
         </span>
       </div>
     </div>

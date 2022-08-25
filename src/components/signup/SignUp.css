@@ -1,0 +1,22 @@
+.signup-container {
+    box-shadow: var(--shadow);
+    height: 26.8rem;
+    width: 30rem;
+    margin: 0 auto;
+    margin-top: 4rem;
+}
+
+.signup-control {
+    text-align: center;
+}
+
+.signup-btn {
+    margin-top: 35px;
+    padding: 5px;
+    width: 20%;
+    border: none;
+}
+
+.signup-btn:hover {
+    background-color: var(--purple);
+}
