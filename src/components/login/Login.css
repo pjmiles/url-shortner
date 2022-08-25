@@ -3,6 +3,7 @@
     height: 20rem;
     width: 30rem;
     margin: 0 auto;
+    margin-top: 5rem;
 }
 
 .header-text {
@@ -29,9 +30,14 @@
     margin-top: 40px;
     padding: 5px;
     width: 20%;
+    border: none;
 }
 
 .login-btn:hover {
     background-color: var(--purple);
-    border: none;
+}
+
+.login-span {
+    text-align: center;
+    padding: 12px;
 }
