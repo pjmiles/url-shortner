@@ -25,13 +25,23 @@
     padding: 5px;
     width: 20%;
     border: none;
+    background-color: var(--purple);
 }
 
 .login-btn:hover {
-    background-color: var(--purple);
+   color: var(--light);
 }
 
 .login-span {
     text-align: center;
     padding: 12px;
+}
+
+@media (max-width: 480px) {
+  .login-container {
+    width: 17rem;
+  }
+  .login-btn {
+    margin-top: 30px;
+  }
 }

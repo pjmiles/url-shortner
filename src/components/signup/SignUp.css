@@ -15,8 +15,19 @@
     padding: 5px;
     width: 20%;
     border: none;
+    background-color: var(--purple)
 }
 
 .signup-btn:hover {
-    background-color: var(--purple);
+    color: var(--light);
 }
+
+@media (max-width: 480px) {
+    .signup-container {
+      width: 17rem;
+      height: 25rem;
+    }
+    /* .signup-btn {
+        margin-bottom: 30px;
+    } */
+  }
