@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import "./LoginForm.css";
-const Login = () => {
+const LoginForm = () => {
+
   return (
     <div className="login-container">
       <form className="login-form">
@@ -38,4 +39,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default LoginForm;
