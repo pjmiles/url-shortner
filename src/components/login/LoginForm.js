@@ -1,11 +1,40 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import axiosInstance from "../../api/axios";
 import "./LoginForm.css";
 const LoginForm = () => {
+  const [loginDetails, setLoginDetails] = useState({ email: "", password: "" });
+  const [loginError, setLogError] = useState("");
+  const [success, setSuccess] = useState("");
+
+  let navigate = useNavigate();
+
+  const getLoginDetails = (e) => {
+    setLoginDetails((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    try {
+     const result = await axiosInstance.post("/", loginDetails)
+      localStorage.setItem("userData", JSON.stringify(result.data))
+      setSuccess(true)
+      navigate("/")
+    } catch (e) {
+      setSuccess(false)
+      setLogError("Login failed, please try again")
+      console.log(e)
+    }
+  }
 
   return (
     <div className="login-container">
-      <form className="login-form">
+      <form className="login-form" onSubmit={handleSubmit}>
         <h1 className="login header-text">Login</h1>
+        {loginError && <span className="login-error">{loginError}</span>}
         <div className="login-control">
           <label htmlFor="email" />
           <input
@@ -13,6 +42,8 @@ const LoginForm = () => {
             placeholder="Email"
             name="email"
             className="input-field"
+            value={loginDetails.email}
+            onChange={getLoginDetails}
             required
           />
         </div>
@@ -23,6 +54,8 @@ const LoginForm = () => {
             placeholder="Password"
             name="password"
             className="input-field"
+            value={loginDetails.password}
+            onChange={getLoginDetails}
             required
           />
         </div>
