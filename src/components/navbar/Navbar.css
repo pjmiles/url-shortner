@@ -1,0 +1,28 @@
+nav {
+    background-color: var(--lilac);
+    color: var(--light);
+    display: flex;
+    justify-content: space-between;
+    position: static;
+    overflow: hidden;
+    padding: 20px;
+}
+
+
+.logo {
+    font-size: 1.5rem;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.nav-link {
+    font-size: 18px;
+    margin-right: 20px;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    color: var(--light);
+    transition: 0.3s;
+}
+

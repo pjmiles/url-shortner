@@ -1,0 +1,47 @@
+.login-container {
+    box-shadow: var(--shadow);
+    height: 20rem;
+    width: 30rem;
+    margin: 0 auto;
+    margin-top: 5rem;
+}
+
+.header-text {
+    text-align: center;
+    font-size: 20px;
+    padding: 20px;
+}
+
+.login-control {
+    text-align: center;
+}
+
+.btn-container {
+    text-align: center;
+}
+
+.login-btn {
+    margin-top: 40px;
+    padding: 5px;
+    width: 20%;
+    border: none;
+    background-color: var(--purple);
+}
+
+.login-btn:hover {
+   color: var(--light);
+}
+
+.login-span {
+    text-align: center;
+    padding: 12px;
+}
+
+@media (max-width: 480px) {
+  .login-container {
+    width: 17rem;
+  }
+  .login-btn {
+    margin-top: 30px;
+  }
+}
