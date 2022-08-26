@@ -15,6 +15,7 @@ const SignUpForm = () => {
       ...prev, [e.target.value]: e.target.value.trim()
     }))
   }
+  
 
   return (
     <div className="signup-container">
