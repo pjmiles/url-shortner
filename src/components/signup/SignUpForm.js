@@ -1,6 +1,21 @@
-import "./SignUp.css";
+import { useState } from "react";
+import "./SignUpForm.css";
 
-const SignUp = () => {
+const SignUpForm = () => {
+  const [signUpUser, setSignUpUser] = useState({
+    name: "",
+    email: "",
+    password1: "",
+    password2: "",
+  })
+  const [sucess, setSuccess] = useState(false) // for successful state upon signing up
+  const [error, setError] = useState("") // to show error messages assiciated with signing up
+  const handleSignUpChange = (e) => {
+    setSignUpUser((prev) => ({
+      ...prev, [e.target.value]: e.target.value.trim()
+    }))
+  }
+
   return (
     <div className="signup-container">
       <form className="signup-form">
@@ -11,6 +26,7 @@ const SignUp = () => {
             type="text"
             placeholder="Name"
             name="name"
+            id="name"
             className="input-field"
             required
           />
@@ -21,16 +37,18 @@ const SignUp = () => {
             type="email"
             placeholder="Email"
             name="email"
+            id="email"
             className="input-field"
             required
           />
         </div>
         <div className="signup-control">
-          <label htmlFor="password" />
+          <label htmlFor="password1" />
           <input
             type="password"
             placeholder="Password"
-            name="password"
+            name="password1"
+            id="password1"
             className="input-field"
             required
           />
@@ -41,6 +59,7 @@ const SignUp = () => {
             type="password"
             placeholder="Confirm Password"
             name="password2"
+            id="password2"
             className="input-field"
             required
           />
@@ -53,4 +72,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default SignUpForm;
