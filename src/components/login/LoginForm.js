@@ -5,7 +5,7 @@ import "./LoginForm.css";
 const LoginForm = () => {
   const [loginDetails, setLoginDetails] = useState({ email: "", password: "" });
   const [loginError, setLogError] = useState("");
-  const [success, setSuccess] = useState("");
+  const [success, setSuccess] = useState(false);
 
   let navigate = useNavigate();
 
@@ -17,58 +17,62 @@ const LoginForm = () => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     try {
-     const result = await axiosInstance.post("/", loginDetails)
-      localStorage.setItem("userData", JSON.stringify(result.data))
-      setSuccess(true)
-      navigate("/")
+      const result = await axiosInstance.post("/", loginDetails);
+      localStorage.setItem("userData", JSON.stringify(result.data));
+      setSuccess(true);
+      navigate("/");
     } catch (e) {
-      setSuccess(false)
-      setLogError("Login failed, please try again")
-      console.log(e)
+      setSuccess(false);
+      setLogError("Login failed, please try again");
+      console.log(e);
     }
-  }
+  };
 
   return (
-    <div className="login-container">
-      <form className="login-form" onSubmit={handleSubmit}>
-        <h1 className="login header-text">Login</h1>
-        {loginError && <span className="login-error">{loginError}</span>}
-        <div className="login-control">
-          <label htmlFor="email" />
-          <input
-            type="email"
-            placeholder="Email"
-            name="email"
-            className="input-field"
-            value={loginDetails.email}
-            onChange={getLoginDetails}
-            required
-          />
+    <>
+      {success ? <div>Successful Login GO TO HOME PAGE</div> : (
+        <div className="login-container">
+          <form className="login-form" onSubmit={handleSubmit}>
+            <h1 className="login header-text">Login</h1>
+            {loginError && <span className="login-error">{loginError}</span>}
+            <div className="login-control">
+              <label htmlFor="email" />
+              <input
+                type="email"
+                placeholder="Email"
+                name="email"
+                className="input-field"
+                value={loginDetails.email}
+                onChange={getLoginDetails}
+                required
+              />
+            </div>
+            <div className="login-control">
+              <label htmlFor="password" />
+              <input
+                type="password"
+                placeholder="Password"
+                name="password"
+                className="input-field"
+                value={loginDetails.password}
+                onChange={getLoginDetails}
+                required
+              />
+            </div>
+            <div className="btn-container">
+              <button className="login-btn">Login</button>
+            </div>
+          </form>
+          <div className="login-span">
+            <span>
+              No Account? <Link to="/signup">click here</Link>
+            </span>
+          </div>
         </div>
-        <div className="login-control">
-          <label htmlFor="password" />
-          <input
-            type="password"
-            placeholder="Password"
-            name="password"
-            className="input-field"
-            value={loginDetails.password}
-            onChange={getLoginDetails}
-            required
-          />
-        </div>
-        <div className="btn-container">
-          <button className="login-btn">Login</button>
-        </div>
-      </form>
-      <div className="login-span">
-        <span>
-          No Account? <Link to="/signup">click here</Link>
-        </span>
-      </div>
-    </div>
+      )}
+    </>
   );
 };
 

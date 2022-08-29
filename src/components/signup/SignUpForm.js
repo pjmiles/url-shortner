@@ -41,11 +41,11 @@ const SignUpForm = () => {
     ) {
       setError("Please provide details");
       setSuccess(false);
-    } else if (signUpDetails.password1 !== signUpDetails.password2) {
-      setError("Password does not match");
-      setSuccess(false);
     } else if (signUpDetails.password1.length <= 7) {
       setError("Password must be more than 7 characters");
+      setSuccess(false);
+    } else if (signUpDetails.password1 !== signUpDetails.password2) {
+      setError("Password does not match");
       setSuccess(false);
     } else {
       postRequest();
