@@ -1,0 +1,8 @@
+.header-container {
+    margin: auto 0;
+}
+
+.header-container h1 {
+    text-align: center;
+    margin: 15px;
+}

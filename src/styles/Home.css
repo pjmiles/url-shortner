@@ -1,6 +1,10 @@
 .url-container {
     text-align: center;
-    margin-top: 6rem;
+    /* margin-top: 6rem; */
+    background: var(--purple);
+    max-width: 60%;
+    height: 100px;
+    margin: auto;
 }
 
 .url-input {
@@ -9,8 +13,10 @@
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: 5px;
     height: 40px;
-    width: 18rem;
+    width: 70%;
+    margin: 2rem;
 }
+
 
 .url-btn {
     height: 40px;
@@ -18,8 +24,8 @@
     width: 40px;
     border-radius: 20px;
     border: none;
-    background: var(--purple);
-    color: var(--light);
+    background: var(--light);
+    color: var(--purple);
     cursor: pointer;
 }
 
