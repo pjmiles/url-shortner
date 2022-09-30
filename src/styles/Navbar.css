@@ -1,5 +1,5 @@
 nav {
-    background-color: var(--lilac);
+    /* background-color: var(--lilac); */
     color: var(--light);
     display: flex;
     justify-content: space-between;
@@ -16,9 +16,13 @@ nav {
 }
 
 .nav-link {
-    font-size: 18px;
+    /* font-size: 18px; */
     margin-right: 20px;
     text-decoration: none;
+    background: var( --purple);
+    color: var(--light);
+    border-radius: 5px;
+    padding: 10px;
 }
 
 .nav-link:hover {

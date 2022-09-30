@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import axiosInstance from "../../api/axios";
-import "./LoginForm.css";
+import axiosInstance from "../api/axios";
+import "../styles/LoginForm.css";
 const LoginForm = () => {
   const [loginDetails, setLoginDetails] = useState({ email: "", password: "" });
   const [loginError, setLogError] = useState("");
